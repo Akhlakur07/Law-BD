@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router";
+import logo from "../../assets/logo-black.png"; // Adjust the path as necessary
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar bg-base-100 py-6 px-28">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -31,7 +32,7 @@ const Navbar = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link>My-Bookings</Link>
+            <Link to="/bookings">My-Bookings</Link>
           </li>
           <li>
             <Link>Blogs</Link>
@@ -41,26 +42,29 @@ const Navbar = () => {
           </li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <div className="flex items-center">
+          <img src={logo} alt="" />
+          <p className="text-[32px] font-extrabold text-[#0F0F0FCC]">Law.BD</p>
+        </div>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal text-[#0F0F0FB3] text-lg font-medium gap-[18px]">
           <li>
             <Link>Home</Link>
           </li>
           <li>
-            <Link>My-Bookings</Link>
+            <Link to="/bookings">My-Bookings</Link>
           </li>
           <li>
-            <Link>Blogs</Link>
+            <Link to="/blogs">Blogs</Link>
           </li>
           <li>
-            <Link>Contact Us</Link>
+            <Link to="/error">Contact Us</Link>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <button className="btn btn-xl btn-success rounded-4xl text-white">Contact Now</button>
       </div>
     </div>
   );
