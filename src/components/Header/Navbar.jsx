@@ -4,7 +4,7 @@ import logo from "../../assets/logo-black.png"; // Adjust the path as necessary
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-100 py-6 px-28">
+    <div className="navbar bg-base-100 py-6 px-40">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router";
 import Navbar from "../../components/Header/Navbar";
+import '../../App.css';
 
 const Error = () => {
   return (
-    <>
+    <div className="mulish-font">
       <Navbar></Navbar>
       <div className="hero bg-base-200 min-h-screen">
         <div className="hero-content text-center">
@@ -20,7 +21,7 @@ const Error = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
