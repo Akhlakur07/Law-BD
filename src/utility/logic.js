@@ -12,4 +12,37 @@ const getCurrentDay = () => {
   return days[today.getDay()];
 };
 
-export {getCurrentDay}
+const getAppointment = () => {
+    const storedAppointments = localStorage.getItem("appointments");
+
+    if (storedAppointments) {
+        return JSON.parse(storedAppointments);
+    }
+    else {
+        return [];
+    }
+}
+
+const addAppointment = (license) => {
+    const storedAppointments = getAppointment();
+
+    if (storedAppointments.includes(license)) {
+        alert("You have already booked an appointment with this lawyer.");
+        return;
+    }
+    else {
+        storedAppointments.push(license);
+        const data = JSON.stringify(storedAppointments);
+        localStorage.setItem("appointments", data);
+        alert("Appointment booked successfully!");
+    }
+}
+
+const removeAppointment = (license) => {
+    const storedAppointments = getAppointment();
+    const updatedAppointments = storedAppointments.filter(app => app !== license);
+    localStorage.setItem("appointments", JSON.stringify(updatedAppointments));
+    alert("Appointment removed successfully!");
+}
+
+export {getCurrentDay, getAppointment, addAppointment, removeAppointment};

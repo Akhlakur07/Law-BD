@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLoaderData, useParams } from "react-router";
 import NoLawyer from "../NoLawyer/NoLawyer";
-import { getCurrentDay } from "../../utility/logic";
+import { addAppointment, getCurrentDay } from "../../utility/logic";
 
 const LawyerDetails = () => {
   const { lawyerLicense } = useParams();
@@ -19,6 +19,10 @@ const LawyerDetails = () => {
 
   const currentDay = getCurrentDay();
   const isAvailableToday = availability.includes(currentDay);
+
+  const handleBookAppointment = (license) => {
+    addAppointment(license);
+  }
 
   return (
     <div>
@@ -116,8 +120,8 @@ const LawyerDetails = () => {
           Due to high client volume, we are currently accepting appointments for
           today only. We appreciate your understanding and cooperation.
         </div>
-        <Link>
-          <button className="btn bg-[#0EA106] w-full mt-10 rounded-2xl text-white text-xl font-bold">
+        <Link to="/bookings">
+          <button onClick={()=>handleBookAppointment(license)} className="btn bg-[#0EA106] w-full mt-10 rounded-2xl text-white text-xl font-bold">
             Book Appointment Now
           </button>
         </Link>
