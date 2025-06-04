@@ -64,7 +64,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <button className="btn btn-xl btn-success rounded-4xl text-white">Contact Now</button>
+        <button className="btn btn-xl bg-[#0EA106] rounded-4xl text-white">Contact Now</button>
       </div>
     </div>
   );

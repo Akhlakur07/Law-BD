@@ -31,11 +31,15 @@ const AllLawyers = ({ data }) => {
         </div>
       </Suspense>
 
-      <div
-        onClick={handleViewMore}
-        className={`text-center mt-10 ${buttonHidden ? "hidden" : ""}`}
-      >
-        <button className="btn btn-success text-white p-7 rounded-2xl text-lg">View All Lawyers</button>
+      <div className="text-center mt-10">
+        <button
+          onClick={handleViewMore}
+          className={`btn bg-[#0EA106] text-white p-7 rounded-2xl text-lg ${
+            buttonHidden ? "hidden" : ""
+          }`}
+        >
+          Show All Lawyers
+        </button>
       </div>
     </div>
   );
