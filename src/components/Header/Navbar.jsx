@@ -35,10 +35,10 @@ const Navbar = () => {
             <Link to="/bookings">My-Bookings</Link>
           </li>
           <li>
-            <Link>Blogs</Link>
+            <Link to="/blogs">Blogs</Link>
           </li>
           <li>
-            <Link>Contact Us</Link>
+            <Link to="/contact">Contact Us</Link>
           </li>
           </ul>
         </div>
@@ -59,7 +59,7 @@ const Navbar = () => {
             <Link to="/blogs">Blogs</Link>
           </li>
           <li>
-            <Link to="/error">Contact Us</Link>
+            <Link to="/contact">Contact Us</Link>
           </li>
         </ul>
       </div>

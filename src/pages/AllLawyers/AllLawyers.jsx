@@ -1,8 +1,15 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
 import Lawyer from "../Lawyer/Lawyer";
 
 const AllLawyers = ({ data }) => {
-  console.log(data);
+  const [lawyers, setLawyers] = useState(6);
+  const [buttonHidden, setButtonHidden] = useState(false);
+
+  const handleViewMore = () => {
+    setLawyers((prev) => prev + 6);
+    setButtonHidden(true);
+  };
+
   return (
     <div className="mx-40 my-[100px]">
       <h2 className="text-center text-[40px] font-extrabold">
@@ -17,12 +24,19 @@ const AllLawyers = ({ data }) => {
       </p>
 
       <Suspense fallback={<span>Loading...</span>}>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-13 mt-10">
-          {data.map((singleLawyer) => (
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-13 mt-10">
+          {data.slice(0, lawyers).map((singleLawyer) => (
             <Lawyer key={singleLawyer.license} data={singleLawyer}></Lawyer>
           ))}
         </div>
       </Suspense>
+
+      <div
+        onClick={handleViewMore}
+        className={`text-center mt-10 ${buttonHidden ? "hidden" : ""}`}
+      >
+        <button className="btn btn-success text-white p-7 rounded-2xl text-lg">View All Lawyers</button>
+      </div>
     </div>
   );
 };
