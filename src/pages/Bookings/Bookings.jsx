@@ -46,8 +46,23 @@ const Bookings = () => {
         </Link>
       </div>
 
-      <div className={`${isEmpty ? "hidden" : ""} mx-40 pt-13 my-8 border border-gray-300 rounded-2xl flex justify-center`}>
+      <div
+        className={`${
+          isEmpty ? "hidden" : ""
+        } mx-40 pt-13 my-8 border border-gray-300 rounded-2xl flex justify-center`}
+      >
         <Chart data={app}></Chart>
+      </div>
+
+      <div className="mx-40 mt-24 mb-16">
+        <h2 className="text-center text-[40px] font-extrabold">
+          My Appointments Today
+        </h2>
+
+        <p className="text-center text-lg font-medium mt-4 w-3/4 mx-auto text-gray-500">
+          Our platform connects you with verified, experienced Lawyers across
+          various specialties — all at your convenience.
+        </p>
       </div>
 
       <div className="gap-13 mt-10 mx-40 mb-[220px]">

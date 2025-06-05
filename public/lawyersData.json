@@ -1,7 +1,7 @@
 [
   {
     "name": "Lukas Schmidt",
-    "availability": ["Sunday", "Monday", "Wednesday"],
+    "availability": ["Sunday", "Monday", "Wednesday", "Friday"],
     "experience": "5+ Years Experience",
     "expertise": "Criminal Expert",
     "license": "DE-2016-3487",
@@ -10,7 +10,7 @@
   },
   {
     "name": "Thomas Dubois",
-    "availability": ["Wednesday", "Friday", "Thursday"],
+    "availability": ["Wednesday", "Friday", "Thursday", "Tuesday"],
     "experience": "7+ Years Experience",
     "expertise": "Corporate Law",
     "license": "FR-2011-1245",
@@ -19,7 +19,7 @@
   },
   {
     "name": "Matteo Rossi",
-    "availability": ["Monday", "Tuesday", "Thursday"],
+    "availability": ["Monday", "Tuesday", "Thursday", "Friday"],
     "experience": "6+ Years Experience",
     "expertise": "Family Law",
     "license": "IT-2015-7123",
@@ -28,7 +28,7 @@
   },
   {
     "name": "Johan Andersson",
-    "availability": ["Sunday", "Tuesday", "Thursday"],
+    "availability": ["Sunday", "Tuesday", "Thursday", "Wednesday"],
     "experience": "5+ Years Experience",
     "expertise": "Civil Litigation",
     "license": "SE-2027-7852",
@@ -37,7 +37,7 @@
   },
   {
     "name": "Pavel Novák",
-    "availability": ["Monday", "Wednesday", "Saturday"],
+    "availability": ["Monday", "Wednesday", "Saturday", "Thursday"],
     "experience": "8+ Years Experience",
     "expertise": "Criminal Expert",
     "license": "CZ-2012-2453",
@@ -46,7 +46,7 @@
   },
   {
     "name": "Miguel Ferreira",
-    "availability": ["Tuesday", "Thursday", "Friday"],
+    "availability": ["Tuesday", "Thursday", "Friday", "Monday"],
     "experience": "10+ Years Experience",
     "expertise": "Tax Law",
     "license": "PT-2011-7598",
@@ -55,7 +55,7 @@
   },
   {
     "name": "Erik Mikkelsen",
-    "availability": ["Sunday", "Monday", "Friday"],
+    "availability": ["Sunday", "Monday", "Friday", "Wednesday"],
     "experience": "6+ Years Experience",
     "expertise": "Property Law",
     "license": "DK-2015-8572",
@@ -64,7 +64,7 @@
   },
   {
     "name": "Nikos Papadopoulos",
-    "availability": ["Monday", "Thursday"],
+    "availability": ["Monday", "Thursday", "Tuesday"],
     "experience": "9+ Years Experience",
     "expertise": "Immigration Law",
     "license": "GR-2013-8529",
@@ -73,7 +73,7 @@
   },
   {
     "name": "Andrei Petrescu",
-    "availability": ["Wednesday", "Friday", "Saturday"],
+    "availability": ["Wednesday", "Friday", "Saturday", "Monday"],
     "experience": "7+ Years Experience",
     "expertise": "Constitutional Law",
     "license": "RO-2013-7364",
@@ -82,7 +82,7 @@
   },
   {
     "name": "Markus Steiner",
-    "availability": ["Tuesday", "Thursday"],
+    "availability": ["Tuesday", "Thursday", "Friday"],
     "experience": "5+ Years Experience",
     "expertise": "Criminal Expert",
     "license": "AT-2017-3495",
@@ -91,7 +91,7 @@
   },
   {
     "name": "Jan Kowalski",
-    "availability": ["Sunday", "Tuesday", "Friday"],
+    "availability": ["Sunday", "Tuesday", "Friday", "Monday"],
     "experience": "11+ Years Experience",
     "expertise": "Contract Law",
     "license": "PL-2010-4519",
@@ -100,7 +100,7 @@
   },
   {
     "name": "David O'Connor",
-    "availability": ["Monday", "Wednesday", "Saturday"],
+    "availability": ["Monday", "Wednesday", "Saturday", "Sunday"],
     "experience": "8+ Years Experience",
     "expertise": "Environmental Law",
     "license": "IE-2012-9871",
