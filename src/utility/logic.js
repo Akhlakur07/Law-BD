@@ -1,3 +1,5 @@
+import { toast } from 'react-toastify';
+
 const getCurrentDay = () => {
   const days = [
     "Sunday",
@@ -23,18 +25,19 @@ const getAppointment = () => {
     }
 }
 
+
 const addAppointment = (license) => {
     const storedAppointments = getAppointment();
 
     if (storedAppointments.includes(license)) {
-        alert("You have already booked an appointment with this lawyer.");
+        toast.error("You have already booked an appointment with this lawyer.");
         return;
     }
     else {
         storedAppointments.push(license);
         const data = JSON.stringify(storedAppointments);
         localStorage.setItem("appointments", data);
-        alert("Appointment booked successfully!");
+        toast.success("Appointment booked successfully!");
     }
 }
 
@@ -42,7 +45,7 @@ const removeAppointment = (license) => {
     const storedAppointments = getAppointment();
     const updatedAppointments = storedAppointments.filter(app => app !== license);
     localStorage.setItem("appointments", JSON.stringify(updatedAppointments));
-    alert("Appointment removed successfully!");
+    toast.info("Appointment removed successfully!");
 }
 
 export {getCurrentDay, getAppointment, addAppointment, removeAppointment};

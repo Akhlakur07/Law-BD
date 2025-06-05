@@ -3,6 +3,7 @@ import { Link, useLoaderData } from "react-router";
 import { getAppointment, removeAppointment } from "../../utility/logic";
 import Appointment from "../Appointment/Appointment";
 
+
 const Bookings = () => {
   const data = useLoaderData();
   const [app, setApp] = useState([]);
@@ -15,13 +16,14 @@ const Bookings = () => {
     setApp(bookedAppointments);
   }, [data]);
 
-  // Handler to remove appointment from state and localStorage
   const handleRemove = (license) => {
     removeAppointment(license);
     setApp((prev) => prev.filter((lawyer) => lawyer.license !== license));
   };
 
   const isEmpty = app.length === 0;
+
+  // const notify = () => toast("Wow so easy!");
   return (
     <div>
       <div
@@ -44,7 +46,7 @@ const Bookings = () => {
           </div>
         </Link>
       </div>
-      <div className="grid grid-cols-1 xl:grid-cols-2 gap-13 mt-10 mx-40 mb-[220px]">
+      <div className="gap-13 mt-10 mx-40 mb-[220px]">
         {app.map((singleLawyer) => (
           <Appointment
             key={singleLawyer.license}

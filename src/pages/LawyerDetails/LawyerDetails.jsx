@@ -1,7 +1,8 @@
 import React from "react";
 import { Link, useLoaderData, useParams } from "react-router";
 import NoLawyer from "../NoLawyer/NoLawyer";
-import { addAppointment, getCurrentDay } from "../../utility/logic";
+import { addAppointment, getAppointment, getCurrentDay } from "../../utility/logic";
+import { toast } from "react-toastify";
 
 const LawyerDetails = () => {
   const { lawyerLicense } = useParams();
@@ -20,9 +21,18 @@ const LawyerDetails = () => {
   const currentDay = getCurrentDay();
   const isAvailableToday = availability.includes(currentDay);
 
+  const allAppointments = getAppointment();
+  const isBooked = allAppointments.includes(license);
+
+  const notAvailableMessage = () => {
+    toast.error(
+      "This lawyer is not available today. Please choose another day."
+    );
+  };
+
   const handleBookAppointment = (license) => {
     addAppointment(license);
-  }
+  };
 
   return (
     <div>
@@ -72,7 +82,9 @@ const LawyerDetails = () => {
       </div>
 
       <div className="mx-40 border p-10 border-gray-300 rounded-2xl mb-[98px]">
-        <h3 className="text-center font-bold text-2xl border-b-2 border-gray-200 border-dashed pb-4">Book an Appointment</h3>
+        <h3 className="text-center font-bold text-2xl border-b-2 border-gray-200 border-dashed pb-4">
+          Book an Appointment
+        </h3>
         <div className="flex justify-between mt-[22px] border-b border-gray-200 pb-5">
           <p className="font-bold text-lg">Availability</p>
           <div className="badge h-7 rounded-xl bg-zinc-100 font-medium text-sm border border-gray-200">
@@ -120,8 +132,13 @@ const LawyerDetails = () => {
           Due to high client volume, we are currently accepting appointments for
           today only. We appreciate your understanding and cooperation.
         </div>
-        <Link to="/bookings">
-          <button onClick={()=>handleBookAppointment(license)} className="btn bg-[#0EA106] w-full mt-10 rounded-2xl text-white text-xl font-bold">
+        <Link to={(isAvailableToday && !isBooked) ? "/bookings" : ""}>
+          <button
+            onClick={
+              isAvailableToday ? () => handleBookAppointment(license) : notAvailableMessage
+            }
+            className="btn bg-[#0EA106] w-full mt-10 rounded-2xl text-white text-xl font-bold"
+          >
             Book Appointment Now
           </button>
         </Link>
