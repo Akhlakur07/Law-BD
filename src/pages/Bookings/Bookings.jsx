@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router";
 import { getAppointment, removeAppointment } from "../../utility/logic";
 import Appointment from "../Appointment/Appointment";
-
+import Chart from "../Chart/Chart";
 
 const Bookings = () => {
   const data = useLoaderData();
@@ -23,7 +23,6 @@ const Bookings = () => {
 
   const isEmpty = app.length === 0;
 
-  // const notify = () => toast("Wow so easy!");
   return (
     <div>
       <div
@@ -46,6 +45,11 @@ const Bookings = () => {
           </div>
         </Link>
       </div>
+
+      <div className={`${isEmpty ? "hidden" : ""} mx-40 pt-13 my-8 border border-gray-300 rounded-2xl flex justify-center`}>
+        <Chart data={app}></Chart>
+      </div>
+
       <div className="gap-13 mt-10 mx-40 mb-[220px]">
         {app.map((singleLawyer) => (
           <Appointment

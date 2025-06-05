@@ -1,7 +1,11 @@
 import React from "react";
 import { Link, useLoaderData, useParams } from "react-router";
 import NoLawyer from "../NoLawyer/NoLawyer";
-import { addAppointment, getAppointment, getCurrentDay } from "../../utility/logic";
+import {
+  addAppointment,
+  getAppointment,
+  getCurrentDay,
+} from "../../utility/logic";
 import { toast } from "react-toastify";
 
 const LawyerDetails = () => {
@@ -95,7 +99,7 @@ const LawyerDetails = () => {
             )}
           </div>
         </div>
-        <div className="badge bg-[#FFA0001A] text-[#FFA000] p-4 font-medium rounded-4xl mt-[16.5px] border border-gray-100">
+        <div className="badge bg-[#FFA0001A] text-[#FFA000] p-3.5 font-medium rounded-4xl mt-[16.5px] border border-gray-100 h-[38px]">
           <svg
             className="size-[1em]"
             xmlns="http://www.w3.org/2000/svg"
@@ -132,16 +136,19 @@ const LawyerDetails = () => {
           Due to high client volume, we are currently accepting appointments for
           today only. We appreciate your understanding and cooperation.
         </div>
-        <Link to={(isAvailableToday && !isBooked) ? "/bookings" : ""}>
-          <button
-            onClick={
-              isAvailableToday ? () => handleBookAppointment(license) : notAvailableMessage
-            }
-            className="btn bg-[#0EA106] w-full mt-10 rounded-2xl text-white text-xl font-bold"
-          >
-            Book Appointment Now
-          </button>
-        </Link>
+        <div
+          onClick={
+            isAvailableToday
+              ? () => handleBookAppointment(license)
+              : notAvailableMessage
+          }
+        >
+          <Link to={isAvailableToday && !isBooked ? "/bookings" : ""}>
+            <button className="btn bg-[#0EA106] w-full mt-10 rounded-2xl text-white text-xl font-bold h-13">
+              Book Appointment Now
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );
