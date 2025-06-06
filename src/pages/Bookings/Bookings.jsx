@@ -3,6 +3,7 @@ import { Link, useLoaderData } from "react-router";
 import { getAppointment, removeAppointment } from "../../utility/logic";
 import Appointment from "../Appointment/Appointment";
 import Chart from "../Chart/Chart";
+import Loading from "../Loading/Loading";
 
 const Bookings = () => {
   const data = useLoaderData();
@@ -22,57 +23,69 @@ const Bookings = () => {
   };
 
   const isEmpty = app.length === 0;
-
+  const [load, setLoad] = useState(true);
+  setTimeout(() => {
+    setLoad(false);
+  }, 200);
   return (
     <div>
       <div
-        className={`${
-          isEmpty ? "" : "hidden"
-        } min-h-[65vh] flex flex-col items-center justify-center gap-5`}
+        className={`mt-50 flex justify-center min-h-[60vh] ${
+          load ? "" : "hidden"
+        }`}
       >
-        <h1 className="text-center text-[40px] font-extrabold">
-          You have not booked any appointmet yet
-        </h1>
-        <p className="text-center text-lg font-medium mt-4 w-3/4 mx-auto text-gray-500">
-          Our platform connects you with verified, experienced Lawyers across
-          various specialties — all at your convenience..
-        </p>
-        <Link to="/">
-          <div className="flex justify-center mt-10">
-            <button className="btn btn-info btn-wide p-8 text-lg text-white rounded-xl">
-              Book an Appointment
-            </button>
-          </div>
-        </Link>
+        <Loading></Loading>
       </div>
+      <div className={`${load ? "hidden" : ""}`}>
+        <div
+          className={`${
+            isEmpty ? "" : "hidden"
+          } min-h-[65vh] flex flex-col items-center justify-center gap-5`}
+        >
+          <h1 className="text-center text-[40px] font-extrabold">
+            You have not booked any appointmet yet
+          </h1>
+          <p className="text-center text-lg font-medium mt-4 w-3/4 mx-auto text-gray-500">
+            Our platform connects you with verified, experienced Lawyers across
+            various specialties — all at your convenience..
+          </p>
+          <Link to="/">
+            <div className="flex justify-center mt-10">
+              <button className="btn btn-info btn-wide p-8 text-lg text-white rounded-xl">
+                Book an Appointment
+              </button>
+            </div>
+          </Link>
+        </div>
 
-      <div
-        className={`${
-          isEmpty ? "hidden" : ""
-        } mx-40 pt-13 my-8 border border-gray-300 rounded-2xl flex justify-center`}
-      >
-        <Chart data={app}></Chart>
-      </div>
+        <div
+          className={`${
+            isEmpty ? "hidden" : ""
+          } mx-40 pt-13 my-8 border border-gray-300 rounded-2xl flex justify-center`}
+        >
+          <Chart data={app}></Chart>
+        </div>
 
-      <div className="mx-40 mt-24 mb-16">
-        <h2 className="text-center text-[40px] font-extrabold">
-          My Appointments Today
-        </h2>
+        <div className="mx-40 mt-24 mb-16">
+          <h2 className="text-center text-[40px] font-extrabold">
+            My Appointments Today
+          </h2>
 
-        <p className="text-center text-lg font-medium mt-4 w-3/4 mx-auto text-gray-500">
-          Our platform connects you with verified, experienced Lawyers across
-          various specialties — all at your convenience.
-        </p>
-      </div>
+          <p className="text-center text-lg font-medium mt-4 w-3/4 mx-auto text-gray-500">
+            Our platform connects you with verified, experienced Lawyers across
+            various specialties — all at your convenience.
+          </p>
+        </div>
 
-      <div className="gap-13 mt-10 mx-40 mb-[220px]">
-        {app.map((singleLawyer) => (
-          <Appointment
-            key={singleLawyer.license}
-            data={singleLawyer}
-            onRemove={handleRemove}
-          />
-        ))}
+        <div className="gap-13 mt-10 mx-40 mb-[220px]">
+          {app.map((singleLawyer) => (
+            <Appointment
+              key={singleLawyer.license}
+              data={singleLawyer}
+              onRemove={handleRemove}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

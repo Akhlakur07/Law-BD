@@ -25,6 +25,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/blogs",
+        loader: () => fetch("/blogs.json").then((res) => res.json()),
         Component: Blogs,
       },
       {

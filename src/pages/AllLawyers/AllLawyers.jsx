@@ -23,13 +23,11 @@ const AllLawyers = ({ data }) => {
         quality care you can trust.
       </p>
 
-      <Suspense fallback={<span>Loading...</span>}>
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-13 mt-10">
-          {data.slice(0, lawyers).map((singleLawyer) => (
-            <Lawyer key={singleLawyer.license} data={singleLawyer}></Lawyer>
-          ))}
-        </div>
-      </Suspense>
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-13 mt-10">
+        {data.slice(0, lawyers).map((singleLawyer) => (
+          <Lawyer key={singleLawyer.license} data={singleLawyer}></Lawyer>
+        ))}
+      </div>
 
       <div className="text-center mt-10">
         <button
