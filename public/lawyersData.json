@@ -10,7 +10,7 @@
   },
   {
     "name": "Thomas Dubois",
-    "availability": ["Wednesday", "Friday", "Thursday", "Tuesday"],
+    "availability": ["Saturday", "Friday", "Thursday", "Tuesday"],
     "experience": "7+ Years Experience",
     "expertise": "Corporate Law",
     "license": "FR-2011-1245",
@@ -64,7 +64,7 @@
   },
   {
     "name": "Nikos Papadopoulos",
-    "availability": ["Monday", "Thursday", "Tuesday"],
+    "availability": ["Monday", "Thursday", "Tuesday","Saturday"],
     "experience": "9+ Years Experience",
     "expertise": "Immigration Law",
     "license": "GR-2013-8529",
