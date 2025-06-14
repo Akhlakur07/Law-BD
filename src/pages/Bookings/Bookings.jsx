@@ -66,7 +66,10 @@ const Bookings = () => {
           <Chart data={app}></Chart>
         </div>
 
-        <div className="mx-40 mt-24 mb-16">
+        <div
+          className={`${isEmpty ? "hidden" : ""}
+          mx-40 mt-24 mb-16`}
+        >
           <h2 className="text-center text-[40px] font-extrabold">
             My Appointments Today
           </h2>
