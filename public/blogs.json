@@ -1,27 +1,27 @@
 [
   {
     "id": 1,
-    "question": "What is useState and how does it work in React?",
-    "answer": "useState is a React Hook that lets you add state to functional components. It returns an array with two elements: the current state value and a function to update that state. When the state changes, the component re-renders to reflect the new state."
+    "question": "Understanding Your Rights: A Guide for Criminal Law Cases",
+    "answer": "Criminal law can be complex and intimidating. In this blog, we break down your fundamental rights when facing criminal charges, including the right to legal representation and the importance of a fair trial."
   },
   {
     "id": 2,
-    "question": "What is the purpose of useEffect in React?",
-    "answer": "useEffect is a React Hook that lets you perform side effects in function components, such as fetching data, subscribing to a service, or updating the DOM. It runs after every render by default, but you can control when it runs using the dependency array."
+    "question": "Top 5 Mistakes to Avoid in Family Law Disputes",
+    "answer": "Family law issues like divorce and child custody can become emotionally charged. Learn about the common mistakes people make during these proceedings and how you can protect your interests legally and emotionally."
   },
   {
     "id": 3,
-    "question": "What is a custom hook in React and when should you use one?",
-    "answer": "A custom hook is a JavaScript function that starts with 'use' and allows you to extract and reuse logic from components. You should use a custom hook when multiple components share the same logic, like handling form inputs or fetching data."
+    "question": "Why You Need a Lawyer for Property Transactions",
+    "answer": "Buying or selling property without legal guidance can lead to costly mistakes. Discover the essential role lawyers play in property deals, title verification, and contract drafting to ensure a smooth transaction."
   },
   {
     "id": 4,
-    "question": "Difference between controlled and uncontrolled components. Which one is better?",
-    "answer": "Controlled components are form elements whose values are controlled by React state, while uncontrolled components store their own state internally using refs. Controlled components are generally preferred for better control and consistency, especially in larger applications."
+    "question": "Corporate Law Explained: What Every Business Owner Should Know",
+    "answer": "Whether you're forming a startup or managing a corporation, understanding corporate law is crucial. This article covers incorporation, compliance, contracts, and shareholder agreements from a legal standpoint."
   },
   {
     "id": 5,
-    "question": "Tell us something about useFormStatus() in React.",
-    "answer": "useFormStatus() is a React Hook used within the context of <form> elements to access the current status of form submission, like whether it is pending or has been submitted. It's useful for providing user feedback during form processing."
+    "question": "Immigration Law Updates: What to Expect This Year",
+    "answer": "Immigration policies are constantly evolving. This post highlights recent changes in immigration law, visa categories, and how you can prepare your documentation to avoid legal hurdles."
   }
 ]
